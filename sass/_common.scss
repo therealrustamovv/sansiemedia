@@ -1,0 +1,150 @@
+@use "./functions.scss" as func;
+@use "./var" as var;
+* {
+  margin: 0;
+  padding: 0;
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+html {
+  scroll-behavior: smooth;
+}
+body {
+  background: #f7f6ff;
+}
+.container {
+  max-width: func.containerWidth();
+  margin-right: auto;
+  margin-left: auto;
+  padding-right: 20px;
+  padding-left: 20px;
+}
+ul {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+}
+button,
+i {
+  border: none;
+  cursor: pointer;
+  background-color: transparent;
+}
+input,
+textarea {
+  outline: none;
+  border: none;
+}
+#loading {
+  position: fixed;
+  background-color: #000;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+  transition: 0.5s;
+}
+#loading.loading-none {
+  opacity: 0;
+  z-index: -1;
+}
+#backtop {
+  position: fixed;
+  right: 20px;
+  bottom: -60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 10px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50px;
+  font-size: 50px;
+  transition: 0.5s;
+  z-index: 10;
+}
+#backtop .top-img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50px;
+}
+#backtop.backtop-show {
+  bottom: 80px;
+}
+#navbar.navbar-shrink {
+  padding: 3px 0px;
+  background-color: #fff;
+  box-shadow: 0px 0px 15px 5px #000;
+}
+#navbar-responsive {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: -100%;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #fff;
+  transition: 0.5s;
+  z-index: 10000;
+}
+#navbar-close {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  font-size: 30px;
+  border: none;
+  background: transparent;
+  z-index: 9999;
+}
+.close {
+  font-size: 30px;
+  color: var(--dark);
+  transition: all 500ms;
+}
+.open {
+  display: none;
+  @media (max-width: 1050px) {
+    & {
+      display: block;
+      font-size: 25px;
+      color: var(--white);
+    }
+  }
+}
+#mode__btn{
+  cursor: pointer;
+}
+.res-nav__list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+.res-nav__link {
+  color: var.$text-color;
+  font-family: "Manrope500";
+  font-size: 25px;
+}
+.title {
+  max-width: 530px;
+  color: var.$text-color;
+  font-family: "Manrope700";
+  font-size: 38px;
+  line-height: 48px; 
+  text-transform: uppercase;
+  margin-bottom: 40px;
+}

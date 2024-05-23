@@ -1,0 +1,526 @@
+@use "./fonts" as font;
+@use "./dark" as dark;
+@use "./var" as var;
+@use "./common.scss" as com;
+@use "./mixins.scss" as mxn;
+@use "./helpers.scss" as help;
+@use "./loading.scss";
+
+// nav start
+.nav {
+  padding: 15px 0px;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  background: var.$white;
+  z-index: 99;
+  transition: all 500ms;
+  &__info {
+    @extend %flex-between;
+  }
+  &__list {
+    @extend %flex-center;
+    gap: 40px;
+  }
+  &__link {
+    font-family: "Manrope500";
+    font-size: 16px;
+    letter-spacing: 0em;
+    color: var.$text-color;
+  }
+  &__btn {
+    @extend .btn;
+    padding: 14px 33px;
+  }
+  &__img{
+    border-radius: 20px
+  }
+}
+// header start
+.header {
+  &__info {
+    @extend %flex-between;
+    padding: 150px 0px 90px;
+  }
+  &__title {
+    color: var.$text-color;
+    font-family: "Manrope500";
+    font-size: 55px;
+    line-height: 65px;
+    text-transform: uppercase;
+    margin-bottom: 14px;
+  }
+  &__strong {
+    color: var.$text-color;
+    font-family: "Manrope800";
+    font-size: 45px;
+    line-height: 65px;
+  }
+  &__text {
+    color: var.$text-color;
+    font-family: "Manrope600";
+    font-size: 16px;
+    line-height: 24px;
+    margin-bottom: 30px;
+  }
+  &__btns {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  &__btn {
+    border-radius: 250px;
+    background: var.$secondary-color;
+    padding: 14px 30px;
+    color: var.$white;
+    font-family: "Manrope600";
+    font-size: 16px;
+    line-height: 26px;
+  }
+  &__img {
+    max-width: 573px;
+  }
+}
+// main start
+.main {
+  padding-bottom: 90px;
+}
+.home {
+  &__center {
+    border-radius: 20px;
+    background: var.$white;
+    box-shadow: 0px 4px 18px 0px rgba(0, 0, 0, 0.08);
+    padding: 40px 77px 56px 53px;
+  }
+  &__columns {
+    @extend %flex-between;
+  }
+  &__column {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    padding-right: 63px;
+    border-right: 1px solid #c7c7c7;
+  }
+  &__column:nth-child(4) {
+    border-right: none;
+    padding-right: 0px;
+  }
+  &__title {
+    font-family: "Manrope800";
+    font-size: 40px;
+    line-height: 48px;
+    color: var.$primary-color;
+  }
+  &__text {
+    color: var.$text-color;
+    font-family: "Manrope500";
+    font-size: 16px;
+    line-height: 24px;
+  }
+  margin-bottom: 76px;
+}
+// about start
+.about {
+  margin-bottom: 90px;
+  &__columns {
+    @extend %flex-between;
+  }
+  &__second {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  &__column {
+    max-width: 220px;
+    height: 378px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border-radius: 15px;
+    background: var.$white;
+    box-shadow: 0px 4px 18px 0px rgba(0, 0, 0, 0.08);
+    margin-bottom: 20px;
+  }
+  &__mon {
+    border-radius: 15px 15px 0px 0px;
+    max-width: 220px;
+    height: 74px;
+    text-align: center;
+    background-color: var.$secondary-color;
+    padding: 11px 50px;
+    margin-bottom: 18px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  &__title {
+    color: var.$white;
+    text-align: center;
+    font-family: "Manrope800";
+    font-size: 18px;
+    line-height: 26px;
+    text-transform: uppercase;
+    max-width: 170px;
+  }
+  &__center {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding-left: 16px;
+    padding-right: 3px;
+  }
+  &__exam {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  &__chek {
+    font-size: 15px;
+    background-color: var.$primary-color;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 15px;
+    padding: 5px;
+    color: var.$white;
+  }
+  &__text {
+    color: var.$text-color;
+    font-family: "Manrope400";
+    font-size: 16px;
+    line-height: 24px;
+  }
+  &__hr {
+    max-width: 210px;
+    height: 2px;
+    background: #e2e2e2;
+    margin: auto;
+    margin-bottom: 11px;
+  }
+  &__max {
+    color: var.$text-color;
+    font-family: "Manrope400";
+    font-size: 16px;
+    line-height: 24px;
+    text-align: center;
+    padding-bottom: 15px;
+  }
+  &__strong {
+    font-family: "Manrope800";
+    font-size: 30px;
+    line-height: 24px;
+    color: var.$primary-color;
+  }
+}
+// help start
+.help {
+  margin-bottom: 112px;
+  &__column {
+    @extend %flex-between;
+  }
+  &__text {
+    color: var.$text-color;
+    font-family: "Manrope400";
+    font-size: 16px;
+    line-height: 26px;
+    margin-bottom: 22px;
+  }
+  &__inputs {
+    @extend %flex-between;
+    margin-bottom: 20px;
+  }
+  &__input {
+    border-radius: 7px;
+    background: var.$white;
+    box-shadow: 0px 4px 18px 0px rgba(0, 0, 0, 0.08);
+    padding: 16px 20px;
+    width: 250px;
+  }
+  &__area {
+    width: 570px;
+    height: 140px;
+    border-radius: 7px;
+    background: var.$white;
+    box-shadow: 0px 4px 18px 0px rgba(0, 0, 0, 0.08);
+    padding: 16px 20px;
+    font-size: 16px;
+    resize: none;
+    margin-bottom: 20px;
+  }
+  &__area::placeholder {
+    color: var.$text-color;
+    font-family: "Manrope300";
+    line-height: 26px;
+    font-size: 16px;
+  }
+  &__cheked {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .chekbox {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    appearance: none;
+    background-color: var.$white;
+    border-radius: 2px;
+    box-shadow: 0px 4px 18px 0px rgba(0, 0, 0, 0.08);
+  }
+  .chekbox::after {
+    content: "";
+    display: inline-block;
+    width: 0;
+    height: 0;
+    transition: 0.5s;
+    background-color: blue;
+  }
+  .chekbox:checked::after {
+    width: 32px;
+    height: 32px;
+    border-radius: 2px;
+  }
+  &__text {
+    color: var.$text-color;
+    font-family: "Manrope300";
+    font-size: 16px;
+    line-height: 26px;
+    margin-top: 25px;
+  }
+}
+// contact start
+.team {
+  &-card {
+    display: flex;
+    flex-direction: column;
+    max-width: 580px;
+    border-radius: 15px;
+    background: var.$white;
+    box-shadow: 0px 4px 18px 0px rgba(0, 0, 0, 0.08);
+  }
+  &__img {
+    max-width: 150px;
+    height: 100px;
+    margin-bottom: 5px;
+    padding: 10px 20px;
+  }
+  &__img2 {
+    max-width: 225px;
+    height: 100px;
+  }
+  &__text {
+    max-width: 508px;
+    color: var(--, #333);
+    font-family: "Manrope400";
+    font-size: 16px;
+    line-height: 26px;
+    margin-bottom: 24px;
+    padding-left: 20px;
+  }
+  &__box {
+    width: 100%;
+    background: #f3f1fe;
+    padding: 20px;
+    &__title {
+      color: var.$text-color;
+      font-family: "Manrope800";
+      font-size: 18px;
+      line-height: 26px;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+    }
+    &__text {
+      max-width: 185px;
+      color: var.$text-color;
+      font-family: "Manrope400";
+      font-size: 16px;
+      line-height: 26px;
+    }
+  }
+  &__cards {
+    display: flex;
+    gap: 10px;
+  }
+  &__child {
+    width: 185px;
+  }
+  &__bottom {
+    padding: 24px 20px 25px;
+    &__images {
+      display: flex;
+      gap: 16px;
+    }
+    &__img {
+      max-width: 151px;
+    }
+  }
+}
+#team-carousel {
+  position: relative;
+}
+#team-carousel :is(.owl-prev, .owl-next) {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  color: #d1d1d1;
+  transition: all 0.5s;
+  top: 40%;
+}
+#team-carousel :is(.owl-prev, .owl-next):hover {
+  background-color: transparent;
+  color: #d1d1d1;
+}
+#team-carousel .owl-prev {
+  left: -25px;
+}
+#team-carousel .owl-next {
+  right: -30px;
+}
+#team-carousel .owl-dot span {
+  width: 20px;
+  height: 20px;
+  background: rgba(0, 0, 0, 0.5);
+  transition: all 0.5s;
+}
+#team-carousel .owl-dot.active span {
+  width: 50px;
+  background: var.$primary-color;
+}
+// footer start
+.footer {
+  background-color: var.$white;
+  padding: 52px 0px 70px;
+  &__info {
+    @extend %flex-between;
+  }
+  &__title {
+    max-width: 166px;
+    color: var.$text-color;
+    font-family: "Manrope400";
+    font-size: 16px;
+    line-height: 24px;
+    text-decoration-line: underline;
+    margin-top: 5px;
+    margin-bottom: 22px;
+  }
+  &__max {
+    color: var.$text-color;
+    font-family: "Manrope600";
+    font-size: 16px;
+    line-height: 36px;
+    text-transform: uppercase;
+    margin-bottom: 13px;
+  }
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  &__link {
+    color: var.$text-color;
+    font-family: "Manrope400";
+    font-size: 16px;
+    line-height: 36px;
+  }
+}
+@media (max-width: 1300px) {
+  #team-carousel :is(.owl-prev, .owl-next) {
+    display: none;
+  }
+}
+@media (max-width: 1200px) {
+  .home__center {
+    padding: 20px;
+  }
+  .home__columns {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    gap: 30px;
+  }
+  .home__column {
+    border-right: none;
+    padding-right: none;
+  }
+  .about__columns {
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+  }
+  .help__column {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    gap: 30px;
+  }
+}
+@media (max-width: 1130px) {
+  .header__info {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 30px;
+  }
+  .header__btns {
+    justify-content: center;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 30px;
+  }
+  .header__img {
+    width: 100%;
+  }
+}
+@media (max-width: 1050px) {
+  .nav__list,
+  .nav__btn {
+    display: none;
+  }
+}
+@media (max-width: 900px) {
+  .footer__info {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+}
+@media (max-width: 600px) {
+  .help__img {
+    width: 100%;
+  }
+  .help__input,
+  .help__area {
+    width: 100%;
+  }
+  .help__inputs {
+    gap: 20px;
+  }
+}
+@media (max-width: 450px) {
+  .nav__img {
+    max-width: 150px;
+  }
+  .help__cheked {
+    gap: 0px;
+  }
+}
+@media (max-width: 320px) {
+  .title {
+    font-size: 25px;
+    text-align: center;
+  }
+}

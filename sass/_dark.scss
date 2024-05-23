@@ -1,0 +1,71 @@
+@use "./var" as var;
+.dark .nav,
+.dark .header,
+.dark .main,
+.dark .footer {
+  background-color: #000;
+}
+.dark #navbar.navbar-shrink {
+  background-color: #000;
+  box-shadow: 0px 0px 15px 5px var.$primary-color;
+}
+.dark h2,
+.dark a,
+.dark p,
+.dark strong {
+  color: #fff;
+}
+.dark .home__center {
+  background-color: #000;
+  box-shadow: 0px 0px 15px 5px var.$primary-color;
+}
+.dark .home__title {
+  color: var.$primary-color;
+}
+.dark .about__column {
+  background-color: #000;
+  box-shadow: 0px 0px 15px 0px var.$primary-color;
+}
+.dark .about__strong {
+  color: var.$primary-color;
+}
+.dark .team-card {
+  background-color: #000;
+  box-shadow: 0px 0px 15px 0px var.$primary-color;
+}
+.dark .team__box {
+  background-color: #000;
+  border-top: 1px solid white;
+  border-bottom: 1px solid white;
+}
+.dark #team-carousel .owl-dot span {
+  background-color: white;
+  box-shadow: 0px 0px 15px 0px white;
+}
+.dark #team-carousel .owl-dot.active span {
+  box-shadow: 0px 0px 15px 5px var.$primary-color;
+}
+.dark .btn {
+  box-shadow: 0px 0px 10px 3px var.$primary-color;
+}
+.dark .help__input {
+  box-shadow: 0px 0px 10px 2px var.$white;
+}
+.dark .header__btn{
+    box-shadow: 0px 0px 10px 1px var.$secondary-color;
+}
+.dark .nav__img{
+    box-shadow: 0px 0px 5px 5px var.$white;
+}
+.dark #backtop{
+    box-shadow: 0px 0px 15px 5px var.$primary-color;
+}
+.dark .open{
+  color: var.$white;
+}
+.dark #navbar-responsive{
+  background-color: #000;
+}
+.dark .close {
+  color: var.$white;
+}
